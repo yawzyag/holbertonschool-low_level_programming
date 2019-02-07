@@ -7,20 +7,18 @@
  */
 int main(void)
 {
-	int var = 0;
-	char varA = ',';
-	char varB = ' ';
+	int var;
 
-	if (var < 10)
+	for (var = 0; var < 100 ; var++)
 	{
+		putchar((var / 10) + '0');
 		putchar((var % 10) + '0');
-		putchar(varA);
-		putchar(varB);
-		var++;
+		if(var < 99)
+		{
+		putchar(',');
+		putchar(' ');
+		}
 	}
-	else
-	{
-		putchar('\n');
-	}
+	putchar('\n');
 	return (0);
 }
