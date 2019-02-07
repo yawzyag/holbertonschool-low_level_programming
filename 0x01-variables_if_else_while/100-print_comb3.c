@@ -21,10 +21,10 @@ int main(void)
 				if ((num1 == '8' && num2 == '9'))
 				{
 				}
-				else 
+				else
 				{
-				putchar(',');
-				putchar(' ');
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
