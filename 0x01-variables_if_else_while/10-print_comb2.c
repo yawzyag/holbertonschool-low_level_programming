@@ -13,7 +13,7 @@ int main(void)
 	{
 		putchar((var / 10) + '0');
 		putchar((var % 10) + '0');
-		if(var < 99)
+		if (var < 99)
 		{
 		putchar(',');
 		putchar(' ');
