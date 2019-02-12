@@ -15,7 +15,7 @@ int main(void)
 		fib = num1;
 		num1 = num2;
 		num2 = fib + num1;
-		if(fib % 2 == 0)
+		if (fib % 2 == 0)
 		{
 			if (i >= 2 && i < 32)
 			{
