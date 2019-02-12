@@ -1,10 +1,16 @@
 #include "holberton.h"
 
+/**
+* print_last_digit - Prints last digit of the num
+*@num: num to check
+*
+* Return: last digit
+*/
 int print_last_digit(int num)
 {
 	int var;
 
-	if(num < 0)
+	if (num < 0)
 	{
 		num = -num;
 	}

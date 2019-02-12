@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+* print_alphabet - Prints "a to z"
+*
+* Return: 0 if all good
+*/
 int print_alphabet(void)
 {
 	char var;

@@ -1,26 +1,34 @@
 #include "holberton.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_alphabet_x10 - Prints "a to z" 10 times
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
  */
 void print_alphabet_x10(void)
 {
 	int i;
 
-	for(i = 0; i < 10; i++)
+	for (i = 0; i < 10; i++)
 	{
 		print_alphabet();
 		_putchar('\n');
 	}
 }
 
+
+/**
+* print_alphabet - Prints "a to z"
+*
+* This is a longer description.
+* Don't forget that a line should not exceed 80 characters.
+* But you're totally free to use several lines to properly
+* describe your function
+* Return: 0
+*/
 int print_alphabet(void)
 {
 	char var;
+
 	for (var = 'a'; var <= 'z'; var++)
 	{
 		_putchar (var);

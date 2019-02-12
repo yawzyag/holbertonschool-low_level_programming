@@ -10,10 +10,10 @@ int main(void)
 	char var[] = "Holberton";
 	int i;
 
-	for(i = 0; i < 9; i ++)
+	for (i = 0; i < 9; i++)
 	{
 		_putchar(var[i]);
 	}
 	_putchar('\n');
-	return(0);
+	return (0);
 }

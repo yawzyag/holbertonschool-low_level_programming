@@ -1,5 +1,9 @@
 #include "holberton.h"
 
+/**
+* jack_bauer - prints the numbers from 00:00 to 23:59
+*
+*/
 void jack_bauer(void)
 {
 	int var1, var2;
