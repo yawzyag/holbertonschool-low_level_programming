@@ -3,9 +3,8 @@
 /**
 * print_alphabet - Prints "a to z"
 *
-* Return: 0 if all good
 */
-int print_alphabet(void)
+void print_alphabet(void)
 {
 	char var;
 
@@ -14,5 +13,4 @@ int print_alphabet(void)
 		_putchar (var);
 	}
 	_putchar('\n');
-	return (0);
 }
