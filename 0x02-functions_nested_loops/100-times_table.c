@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_times_table - show the table of a number
@@ -42,8 +43,7 @@ void print_times_table(int n)
 						_putchar(' ');
 						_putchar(' '); }
 					_putchar(c + '0');
-				}
-			}
+				}}
 			_putchar('\n');
 		}}
 }
