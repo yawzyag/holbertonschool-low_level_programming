@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	long int num1 = 1, num2 = 2, fib, sum;
+	int num1 = 1, num2 = 2, fib, sum = 0;
 
-	for(sum = 0; sum < 4000000; sum++)
+	for (fib = 0; fib < 4000000; fib++)
 	{
 		fib = num1;
 		num1 = num2;
@@ -18,13 +18,8 @@ int main(void)
 		{
 			sum = fib + sum;
 		}
-		else
-		{
-			sum++;
-		}
-
 	}
-	printf("%ld", sum);
+	printf("%d", sum);
 	printf("\n");
 	return (0);
 }
