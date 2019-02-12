@@ -10,9 +10,9 @@ int main(void)
 	int i;
 	long int num1 = 1, num2 = 2, fib;
 
-	for (i = 1; i < 50; i++)
+	for (i = 0; i < 50; i++)
 	{
-		if (i > 1 && i < 50)
+		if (i >= 1 && i < 50)
 		{
 			printf(", ");
 		}
