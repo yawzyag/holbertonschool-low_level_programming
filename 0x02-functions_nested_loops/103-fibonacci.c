@@ -7,23 +7,27 @@
  */
 int main(void)
 {
-	int i;
-	long int num1 = 1, num2 = 2, fib, sum = 0;
+	long int num1 = 1, num2 = 2, fib, sum;
 
-	for (i = 0; i < 32; i++)
+	for(sum = 0; sum < 4000000; sum++)
 	{
 		fib = num1;
 		num1 = num2;
 		num2 = fib + num1;
 		if (fib % 2 == 0)
 		{
-			if (i >= 2 && i < 32)
+			if (sum > 2 && sum < 4000000)
 			{
 				printf(", ");
 			}
 			sum = fib + sum;
 			printf("%ld", fib);
 		}
+		else
+		{
+			sum++;
+		}
+
 	}
 	printf("\n");
 	return (0);
