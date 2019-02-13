@@ -28,7 +28,7 @@ int main(void)
 			last_num = (fib % 100000000000);
 			fib_first = (num1 / 100000000000);
 			fib_last = (num1 % 100000000000);
-			printf("%lu%lu", fib_first, fib_last); }
+			printf("%lu0%lu", fib_first, fib_last); }
 		else
 		{
 			num_part1 = first_num + fib_first;
