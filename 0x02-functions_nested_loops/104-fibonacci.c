@@ -40,7 +40,6 @@ int main(void)
 			fib_last = num_part2;
 			if (i > 96)
 			{
-				printf("\n");
 				first_num++;
 				last_num = last_num - 100000000000; }
 		}}
