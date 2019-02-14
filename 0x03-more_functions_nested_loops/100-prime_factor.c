@@ -13,6 +13,6 @@ int main(void)
 			i = 2;
 		}
 	}
-	printf ("%li\n", i);
-	return(0);
+	printf("%li\n", i);
+	return (0);
 }
