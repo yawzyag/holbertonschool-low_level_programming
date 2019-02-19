@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_rev - show a table whit 9 multiplication
- *
+ * print_rev - reverse a string
+ * @s: letter to reverse
+*
  * Return: void
  */
 void print_rev(char *s)
@@ -13,11 +14,10 @@ void print_rev(char *s)
 	{
 		s++;
 	}
-
-        for (j = i; j > 0; j--)
-        {
+	for (j = i; j > 0; j--)
+	{
 		s--;
 		_putchar(*s);
-        }
-        _putchar('\n');
+	}
+	_putchar('\n');
 }
