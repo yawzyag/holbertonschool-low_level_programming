@@ -19,7 +19,7 @@ int _atoi(char *s)
 		}
 		for (; (s[i] >= 48 && s[i] <= 57); i++)
 		{
-			sum = sum * 10 - (s[i] - '0');
+			sum = sum * 10 - ((int)s[i] - '0');
 		}
 	}
 	neg = neg * -1;
