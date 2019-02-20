@@ -8,21 +8,20 @@
  */
 int _atoi(char *s)
 {
-	int result;
-	int plus;
+	int sum = 0, i = 0, neg = 1;
 
-	result = 0;
-	plus = 1;
-	while (('-' == (*s)) || ((*s) == '+'))
+	if (s[i] != 0)
 	{
-		if (*s == '-')
-			plus = plus * -1;
-		s++;
+		for (i = 0; (s[i] < '0' || s[i] > '9'); i++)
+		{
+			if (s[i] == '-')
+				neg = neg * -1;
+		}
+		for (; (s[i] >= '0' && s[i] <= '9'); i++)
+		{
+			sum = sum * 10 - (s[i] - '0');
+		}
 	}
-	while ((*s >= '0') && (*s <= '9'))
-	{
-		result = (result * 10) + ((*s) - '0');
-		s++;
-	}
-	return (result * plus);
+	neg = neg * -1;
+	return (sum * neg);
 }
