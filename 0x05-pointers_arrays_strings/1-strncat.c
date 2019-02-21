@@ -2,12 +2,13 @@
 
 /**
  * _strcat - show a table whit 9 multiplication
- * @dest: string to pass
+ * @dest: destination
  * @src: string to add
+ * @n: number of lines
  *
  * Return: char
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int length, i, j;
 
@@ -20,7 +21,7 @@ char *_strcat(char *dest, char *src)
 	{
 		dest--;
 	}
-	for (i = 0 ; src[i] != '\0' ; i++)
+	for (i = 0; i < n && src[i] != '\0' ; i++)
 	{
 		dest[length + i] = src[i];
 	}
