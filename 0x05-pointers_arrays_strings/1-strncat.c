@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _strcat - show a table whit 9 multiplication
+ * _strncat - show a table whit 9 multiplication
  * @dest: destination
  * @src: string to add
  * @n: number of lines
