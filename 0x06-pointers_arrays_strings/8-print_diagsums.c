@@ -9,17 +9,14 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int i, j, sum;
-
-	for(i = 0;i < size; i++)
+       #include <stdio.h>
+	void print_diagsums(int *a, int size)
 	{
-		for(j = 0; j < size; j++)
-		{
-			if(i == j)
-			{
-				sum += a[i][j];
-			}
-		}
+		int i, j, d1, d2;
+		for(i = 0; i < size * size; i++)
+			if(i == size)
+				d1 += *(a + (i));
 	}
-	_putchar(sum);
+        printf("%d, %d\n", d1, d2);
+}
 }
