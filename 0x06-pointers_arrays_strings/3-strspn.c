@@ -12,7 +12,7 @@ char *_strchr(char *s, char c)
 {
 	while (*s != c)
 		if (!*s++)
-			return 0;
+			return (0);
 	return (s);
 }
 
@@ -26,7 +26,8 @@ char *_strchr(char *s, char c)
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i;
-	for(i = 0; *s && _strchr(accept,*s++); i ++)
+
+	for (i = 0; *s && _strchr(accept, *s++); i++)
 	{}
 	return (i);
 }
