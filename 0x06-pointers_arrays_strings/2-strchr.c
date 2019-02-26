@@ -13,9 +13,11 @@ char *_strchr(char *s, char c)
 
 	for (i = 0; *s != c; i++)
 	{
-		s++;
 		if (!*s)
+		{
 			return (0);
+		}
+		s++;
 	}
 	return (s);
 }
