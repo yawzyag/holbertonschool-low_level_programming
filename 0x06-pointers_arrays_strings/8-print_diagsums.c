@@ -2,15 +2,16 @@
 #include <stdio.h>
 
 /**
- * print_diagsum - sum diagonals
+ * print_diagsums - sum diagonals
  * @a: array from number
  * @size: size of sum to print
  *
  * Return: sum of diag
  */
-void print_diagsums (int *a, int size)
+void print_diagsums(int *a, int size)
 {
 	int i, d1, d2;
+
 	for (i = 0, d1 = 0; i < size * size; i++)
 	{
 		d1 += *(a + (i));
@@ -22,5 +23,5 @@ void print_diagsums (int *a, int size)
 		i -= size - 1;
 	}
 
-	printf ("%d, %d\n", d1, d2);
+	printf("%d, %d\n", d1, d2);
 }
