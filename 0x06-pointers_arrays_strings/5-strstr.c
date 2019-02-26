@@ -10,7 +10,7 @@
  * Return: char
  */
 
-int _memcmp(const void *s1, const void *s2, char n)
+int _memcmp(void *s1, void *s2, char n)
 {
 	const unsigned char *p1 = s1, *p2 = s2;
 
