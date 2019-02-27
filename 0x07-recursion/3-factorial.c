@@ -1,21 +1,21 @@
 #include "holberton.h"
 
 /**
- * _strlen_recursion - print length whir recursion
- * @s: string to check
+ * factorial - print !number
+ * @n: number to check
  *
- * Return: void
+ * Return: num
  */
 int factorial(int n)
 {
 
 	if (n == 0)
 	{
-		return(1);
+		return (1);
 	}
 	else if (n < 0)
 	{
-		return(-1);
+		return (-1);
 	}
-	return(n * factorial(n -1));
+	return (n * factorial(n - 1));
 }
