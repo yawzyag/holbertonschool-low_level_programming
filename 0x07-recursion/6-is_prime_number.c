@@ -10,13 +10,15 @@
  */
 int prime(int n, int x)
 {
-	if (n > x)
+	if (n <= x)
 	{
-		if (n % x != 0)
-		{
-			return (prime(n, x + 1));
-		}
+		return (1);
 	}
+	if (n % x != 0)
+	{
+		return (prime(n, x + 1));
+	}
+	return (0);
 }
 
 /**
@@ -29,10 +31,10 @@ int is_prime_number(int n)
 {
 	int x = 2;
 
-	if (n > 2)
+	if (n < 2)
 	{
-		return (prime(n, x) / n);
-
+		return (0);
 	}
-	return (0);
+
+	return (prime(n, x));
 }
