@@ -12,11 +12,7 @@ int prime(int n, int x)
 {
 	if (n > x)
 	{
-		if (n % x == 0)
-		{
-			return (0);
-		}
-		else
+		if (n % x != 0)
 		{
 			return (prime(n, x + 1));
 		}
@@ -31,14 +27,12 @@ int prime(int n, int x)
  */
 int is_prime_number(int n)
 {
-		int x = 2;
+	int x = 2;
 
-		if (n < 2)
-		{
-			return (0);
-		}
-		else
-		{
-			return (prime(n, x) / n);
-		}
+	if (n > 2)
+	{
+		return (prime(n, x) / n);
+
+	}
+	return (0);
 }
