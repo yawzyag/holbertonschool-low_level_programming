@@ -7,7 +7,7 @@
  *
  * Return: num
  */
-int _sqrt(int n, unsigned int x)
+int _sqrt(int n, int x)
 {
 	if (x * x == n)
 	{
@@ -28,7 +28,7 @@ int _sqrt(int n, unsigned int x)
  */
 int _sqrt_recursion(int n)
 {
-	unsigned int x = 0;
+	int x = 0;
 
 	return (_sqrt(n, x));
 }
