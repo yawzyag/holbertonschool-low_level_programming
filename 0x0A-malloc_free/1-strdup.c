@@ -19,12 +19,12 @@ char *_strdup(char *str)
 		len++;
 
 	cpy = malloc(sizeof(cpy) * (len + 1));
-
 	if (cpy == NULL)
 		return (0);
-
-	for (int i = 0; i <= len; i++)
+	for (int i = 0; i < len; i++)
 		*(cpy + i) = *(str + i);
+
+	*(cpy + i) = '\0';
 
 	return (cpy);
 }
