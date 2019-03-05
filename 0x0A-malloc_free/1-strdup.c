@@ -24,7 +24,7 @@ char *_strdup(char *str)
 	if (cpy == NULL)
 		return (0);
 
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 		*(cpy + i) = *(str + i);
 
 	*(cpy + i) = '\0';
