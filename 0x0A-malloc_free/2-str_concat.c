@@ -11,6 +11,14 @@
 char *str_concat(char *s1, char *s2)
 {
 	int len, len1, len2, i;
+	char *string;
+	char *res;
+
+	if(!*s1)
+		s1 = "";
+
+	if(!*s2)
+		s2 = "";
 
 	for (i = 0, len1 = 0; *(s1 + i); i++)
 		len1++;
@@ -20,11 +28,8 @@ char *str_concat(char *s1, char *s2)
 
 	len = len1 + len2;
 
-	if (!(len))
-		return (0);
-
-	char *string = malloc(len + 1);
-	char *res = string;
+	string = malloc(len + 1);
+	res = string;
 
 	for (; *s1;)
 		*string++ = *s1++;
