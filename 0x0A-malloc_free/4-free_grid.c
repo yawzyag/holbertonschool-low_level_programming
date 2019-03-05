@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * free_grid - copy a string
