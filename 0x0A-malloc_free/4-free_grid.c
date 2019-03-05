@@ -3,14 +3,15 @@
 #include <stdio.h>
 
 /**
- * _strdup - copy a string
- * @str: string
+ * free_grid - copy a string
+ * @grid: string
+ * @height: heigth
  *
  * Return: number acci code
  */
 void free_grid(int **grid, int height)
 {
-	int i, width, size = 0;
+	int j, width, size = 0;
 
 	if (grid != NULL)
 	{
