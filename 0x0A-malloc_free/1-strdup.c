@@ -13,7 +13,7 @@ char *_strdup(char *str)
 	int len, i;
 	char *cpy;
 
-	if (!*str)
+	if (!str)
 		return (NULL);
 
 	for (i = 0, len = 0; *(str + i); i++)
@@ -25,9 +25,9 @@ char *_strdup(char *str)
 		return (NULL);
 
 	for (i = 0; i < len; i++)
-		cpy[i] = str[i];
+		*(cpy +i) = *(str + i);
 
-	cpy[i] = '\0';
+	*(cpy + i) = '\0';
 
 	return (cpy);
 }
