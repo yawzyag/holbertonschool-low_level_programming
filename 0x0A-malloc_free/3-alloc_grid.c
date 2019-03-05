@@ -2,6 +2,24 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
+/**
+ * _free - free
+ * @arr: array
+ * @i: size
+ *
+ * Return: void
+ */
+void _free(int **arr, int i)
+{
+	int j;
+
+	for (j = 0; j < i; j++)
+		free(arr[j]);
+
+	free(arr);
+}
+
 /**
  * alloc_grid - copy a string
  * @width: width
@@ -17,17 +35,14 @@ int **alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	arr = malloc(sizeof(int *) * height);
+	arr = (int **)malloc(sizeof(int *) * height);
 
 	for (i = 0; i < width; i++)
-		arr[i] = malloc(sizeof(int) * width);
+		arr[i] = (int *)malloc(sizeof(int) * width);
 
 	if (arr == NULL)
 	{
-		for(j = 0; j < i; j++)
-			free(arr[j]);
-
-		free(arr);
+		_free(arr, i);
 		return (NULL);
 	}
 
