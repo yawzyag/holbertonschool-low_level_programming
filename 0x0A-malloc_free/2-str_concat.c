@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * str_concat - copy a string
@@ -14,10 +15,10 @@ char *str_concat(char *s1, char *s2)
 	char *string;
 	char *res;
 
-	if(!*s1)
+	if (!*s1)
 		s1 = "";
 
-	if(!*s2)
+	if (!*s2)
 		s2 = "";
 
 	for (i = 0, len1 = 0; *(s1 + i); i++)
@@ -30,6 +31,9 @@ char *str_concat(char *s1, char *s2)
 
 	string = malloc(len + 1);
 	res = string;
+
+	if (string == NULL)
+		return (0);
 
 	for (; *s1;)
 		*string++ = *s1++;
