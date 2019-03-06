@@ -14,7 +14,7 @@ void _free(int **arr, int i)
 {
 	int j;
 
-	for (j = 0; j < i; j++)
+	for (j = i - 1; i >= 0; j--)
 		free(arr[j]);
 
 	free(arr);
@@ -37,18 +37,21 @@ int **alloc_grid(int width, int height)
 
 	arr = (int **)malloc(sizeof(int *) * height);
 
-	for (i = 0; i < width; i++)
+	if (arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
+	{
 		arr[i] = (int *)malloc(sizeof(int) * width);
 
-	if (arr == NULL)
-	{
-		_free(arr, i);
-		return (NULL);
+		if (arr == NULL)
+		{
+			_free(arr, i);
+			return (NULL);
+		}
 	}
-
-	for (i = 0; i <  height; i++)
-		for (j = 0; j < width; j++)
-			arr[i][j] = 0;
+	for (i = 0; j <  width; j++)
+		arr[i][j] = 0;
 
 	return (arr);
 }
