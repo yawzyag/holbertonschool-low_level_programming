@@ -1,0 +1,32 @@
+#include "holberton.h"
+#include <stdlib.h>
+
+/**
+ * array_range - show the length of string
+ * @min: min num
+ * @max: max range num
+ *
+ * Return: lenght of string
+ */
+int *array_range(int min, int max)
+{
+	int *ptr;
+	int i;
+
+	if (min > max)
+		return (0);
+
+	for (i = 0; i >= min && i <= max;)
+	{
+		i++;
+	}
+	ptr = malloc(i * sizeof(int));
+
+	if (ptr == NULL)
+		return (0);
+
+	for (i = 0; i <= (max) - min; i++)
+		ptr[i] = i + min;
+
+	return (ptr);
+}
