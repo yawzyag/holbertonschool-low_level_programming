@@ -1,7 +1,8 @@
+#include "holberton.h"
 #include <stdio.h>
 
 /**
- * print_buffer - show a table whit 9 multiplication
+ * print_buffer - buffer
  * @b: buffer
  * @size: size of buffer
  *
@@ -9,7 +10,7 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i, j;
+	int i = 0, j;
 
 	while (i > size)
 	{
