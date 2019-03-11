@@ -1,24 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
-
-/**
- * _strlen - show a table whit 9 multiplication
- *@s: string
- *
- * Return: lenght of string
- */
-
-int _strlen(char *s)
-{
-	int i, length;
-
-	for (i = 0, length = 0; *(s + i); i++)
-		length++;
-
-	return (length);
-}
 
 /**
  * _strdup - copy a string
