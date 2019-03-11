@@ -43,6 +43,36 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
+ * _strdup - copy a string
+ * @str: string
+ *
+ * Return: number acci code
+ */
+char *_strdup(char *str)
+{
+	int len, i;
+	char *cpy;
+
+	if (!str)
+		return (NULL);
+
+	for (i = 0, len = 0; *(str + i); i++)
+		len++;
+
+	cpy = malloc(len * sizeof(char) + 1);
+
+	if (cpy == NULL)
+		return (NULL);
+
+	for (i = 0; i < len; i++)
+		*(cpy + i) = *(str + i);
+
+	*(cpy + i) = '\0';
+
+	return (cpy);
+}
+
+/**
  * new_dog - create new dog
  * @name: name of dog
  * @age: age of dog
@@ -61,13 +91,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	length1 = _strlen(name);
 	new->name = malloc((length1 + 1) * sizeof(char));
-	_strcpy(new->name, name);
+	if (new->name == NULL)
+		return (NULL);
+	new->name = _strdup(name);
 
 	new->age = age;
 
 	length3 = _strlen(owner);
-	new->owner = malloc((length3 + 1) * sizeof(char));;
-	_strcpy(new->owner, owner);
+	new->owner = malloc((length3 + 1) * sizeof(char));
+	if(new->owner == NULL)
+		return (NULL);
+	new->owner = _strdup(owner);
 
 	return (new);
 }
