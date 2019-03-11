@@ -21,28 +21,6 @@ int _strlen(char *s)
 }
 
 /**
- * _strcpy - show a table whit 9 multiplication
- *@dest: string dest
- *@src: string source
- *
- * Return: char of strings
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i, length;
-
-	for (i = 0, length = 0; *(dest + i) != '\0'; i++)
-		length++;
-
-	for (i = 0; i < length && src[i] != '\0'; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-/**
  * _strdup - copy a string
  * @str: string
  *
@@ -99,7 +77,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	length3 = _strlen(owner);
 	new->owner = malloc((length3 + 1) * sizeof(char));
-	if(new->owner == NULL)
+	if (new->owner == NULL)
 		return (NULL);
 	new->owner = _strdup(owner);
 
