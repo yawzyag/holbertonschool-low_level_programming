@@ -1,9 +1,10 @@
 #include "function_pointers.h"
 
 /**
- * print_name - prints a name
- * @name: name to print
- * @f: function pointer
+ * array_iterator - iterator of the array
+ * @array: array to check
+ * @size: size of array
+ * @action: function to print
  *
  * Return: name of person coincidence
  */
