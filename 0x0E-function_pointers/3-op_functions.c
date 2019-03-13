@@ -45,25 +45,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-**
-  4│  * op_add - op to add two numbers
-	5│  * @a: num1
-		6│  * @b: num 2
-  7│  *
-		8│  * Return: sum
-  9│  */
-		10│ int op_add(int a, int b)
-		11│ {
-		12│         return (a + b);
-		13│ }
- 14│
- 15│ /**
- 16│  * op_sub - substraction of num
- 17│  * @a: num1
- 18│  * @b: num 2
- 19│  *
- 20│  * Return: rest
- 21│  */	return (a / b);
+	return (a / b);
 }
 
 /**
