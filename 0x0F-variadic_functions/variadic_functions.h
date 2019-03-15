@@ -5,4 +5,5 @@
 /* this prototype has to be declared in a header file */
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
+void print_strings(const char *separator, const unsigned int n, ...);
 #endif /* FUNCTION_POINTERS_H */
