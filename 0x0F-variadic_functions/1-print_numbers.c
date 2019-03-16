@@ -13,9 +13,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 
 	/* initialize valist for num number of arguments */
-	if (n)
-	{/* access all the arguments assigned to valist */
-		va_start(varlist, n);
+	/* access all the arguments assigned to valist */
+	va_start(varlist, n);
 		for (i = 0; i < n; i++)
 		{
 			printf("%d", va_arg(varlist, int));
@@ -26,8 +25,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			}
 		}
 		printf("\n");
-	}
-
 	/* clean memory reserved for valist */
 	va_end(varlist);
 }
