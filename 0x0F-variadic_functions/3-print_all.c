@@ -29,10 +29,12 @@ void print_all(const char * const format, ...)
 		case 's':
 			ptr = va_arg(args, char *);
 
-			if (ptr)
-				printf("%s", ptr);
-			else
+			if (!ptr)
+			{
 				printf("%p", ptr);
+				break;
+			}
+				printf("%s", ptr);
 			break;
 		default:
 			++j;
