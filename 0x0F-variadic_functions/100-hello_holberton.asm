@@ -1,20 +1,25 @@
-	;;  Define variables in the data section
-	SECTION .DATA
-hello:	     db 'Hello Holberton',10
-helloLen:	  equ $-hello
+;; nasm -f elf64 100-hello_holberton.asm && gcc 100-hello_holberton.o -o hello
+%ifidn __OUTPUT_FORMAT__,elf64
+section .note.GNU-stack noalloc noexec nowrite progbits
+%endif
 
-	;;  Code goes in the text section
-	SECTION .TEXT
-	GLOBAL _start
+sys_exit    equ 60
+sys_write   equ 1
 
-_start:
-	mov eax,4            	; 'write' system call = 4
-	mov ebx,1            	; file descriptor 1 = STDOUT
-	mov ecx,hello        	; string to write
-	mov edx,helloLen     	; length of string to write
-	int 80h              	; call the kernel
+	default rel
+	global main		;must be declared for using gcc
 
-	;;  Terminate program
-	mov eax,1            	; 'exit' system call
-	mov ebx,0            	; exit with error code 0
-	int 80h              	; call the kernel
+section	.text
+main:				;tell linker entry point
+	mov	edx, len	;message length
+	mov	esi, msg	;message to write
+	mov	edi, 1		;file descriptor (stdout)
+	mov	eax, sys_write	;system call number (sys_write)
+	syscall			;call kernel
+	xor edi, edi
+	mov	eax, sys_exit	;system call number (sys_exit)
+	syscall			;call kernel
+
+section	.rodata
+msg	db	'Hello, Holberton',0xa ;our dear string
+len	equ	$ - msg		    ;length of our dear string
