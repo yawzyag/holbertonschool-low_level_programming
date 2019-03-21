@@ -20,4 +20,5 @@ typedef struct list_s
 } list_t;
 /* this prototype has to be declared in a header file */
 size_t print_list(const list_t *h);
+size_t list_len(const list_t *h);
 #endif /* LIST_H */
