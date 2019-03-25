@@ -4,7 +4,7 @@ listint_t *reverse_listint(listint_t **head)
 {
     listint_t *prevNode, *curNode;
 
-    if(*head)
+    if (*head)
     {
         prevNode = *head;
         curNode = (*head)->next;
@@ -12,7 +12,7 @@ listint_t *reverse_listint(listint_t **head)
 
         prevNode->next = NULL; // Make first node as last node
 
-        while(*head)
+        while (*head)
         {
             *head = (*head)->next;
             curNode->next = prevNode;
