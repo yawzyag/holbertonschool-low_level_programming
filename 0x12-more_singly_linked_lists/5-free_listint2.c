@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * free_list - free nodes
- *@head: node
+ * free_listint2 - free nodes
+ * @head: node
  *
  * Return: 0
  */
