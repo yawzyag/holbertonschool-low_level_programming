@@ -10,6 +10,8 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int val;
 
+	if (b)
+		return (0);
 	for (val = 0; *b; b++)
 	{
 		if (*b == '1')
