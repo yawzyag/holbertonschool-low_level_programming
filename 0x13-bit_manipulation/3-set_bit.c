@@ -10,8 +10,9 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int mask = 1 << index;
+	unsigned long int uimax = ~0;
 
-	if (index > 64)
+	if (index > uimax)
 		return (-1);
 	*n = *n | mask;
 	return (1);
