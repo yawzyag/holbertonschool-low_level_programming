@@ -16,7 +16,7 @@ void times_table(void)
 			c = i * var;
 			if (c >= 10)
 			{
-				if (i > 0 && i < 10)
+				if (i > 0)
 				{
 					_putchar(',');
 					_putchar(' ');
@@ -26,7 +26,7 @@ void times_table(void)
 			}
 			else
 			{
-				if (i > 0 && i < 10)
+				if (i > 0)
 				{
 					_putchar(',');
 					_putchar(' ');
@@ -38,4 +38,3 @@ void times_table(void)
 		_putchar('\n');
 	}
 }
-
