@@ -15,9 +15,6 @@ int main(int ac, char **av)
 	if (ac != 3)
 	{ dprintf(2, "Usage: cp %s %s\n", av[1], av[2]);
 		exit(97); }
-	if (!av[1])
-	{ dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		exit(98); }
 	fd_1 = open(av[1], O_RDONLY);
 	if (fd_1 == -1)
 	{ dprintf(2, "Error: Can't read from file %s\n", av[1]);
@@ -28,14 +25,14 @@ int main(int ac, char **av)
 		exit(99); }
 	while (num_let == 1024)
 	{
-		num_let = read(fd_1, buf, sizeof(buf));
+		num_let = read(fd_1, buf, 1024);
 		if (num_let == -1)
 		{ dprintf(2, "Error: Can't read from file %s\n", av[1]);
 			exit(98); }
 		num_let = write(fd_2, buf, num_let);
 		if (num_let == -1)
-		{ dprintf(2, "Usage: %s filename text\n", av[0]);
-			exit(1); }
+		{ dprintf(2, "Error: Can't write to %s\n", av[0]);
+			exit(99); }
 	}
 	c_1 = close(fd_1);
 	c_2 = close(fd_2);
