@@ -37,10 +37,10 @@ int main(int ac, char **av)
 	c_1 = close(fd_1);
 	c_2 = close(fd_2);
 	if (c_1 == -1)
-	{ dprintf(2, "Error: Can't close fd %d\n'", fd_1);
+	{ dprintf(2, "Error: Can't close fd %d\n", fd_1);
 		exit(100); }
 	if (c_2 == -1)
-	{dprintf(2, "Error: Can't close fd %d\n'", fd_2);
+	{dprintf(2, "Error: Can't close fd %d\n", fd_2);
 		exit(100); }
 	return (0);
 }
