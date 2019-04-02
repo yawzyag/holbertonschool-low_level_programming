@@ -31,7 +31,7 @@ int main(int ac, char **av)
 			exit(98); }
 		num_let = write(fd_2, buf, num_let);
 		if (num_let == -1)
-		{ dprintf(2, "Error: Can't write to %s\n", av[0]);
+		{ dprintf(2, "Error: Can't write to %s\n", av[2]);
 			exit(99); }
 	}
 	c_1 = close(fd_1);
