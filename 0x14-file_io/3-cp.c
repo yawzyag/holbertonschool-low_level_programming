@@ -36,10 +36,10 @@ int main(int ac, char **av)
 			exit(99); }
 	}
 	c_1 = close(fd_1);
-	c_2 = close(fd_2);
 	if (c_1 == -1)
 	{ dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_1);
 		exit(100); }
+	c_2 = close(fd_2);
 	if (c_2 == -1)
 	{dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_2);
 		exit(100); }
