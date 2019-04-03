@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	char buf[1024];
 
 	if (ac != 3)
-	{ dprintf(STDERR_FILENO, "Usage: cp %s %s\n", av[1], av[2]);
+	{ dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97); }
 	fd_1 = open(av[1], O_RDONLY);
 	if (fd_1 == -1)
