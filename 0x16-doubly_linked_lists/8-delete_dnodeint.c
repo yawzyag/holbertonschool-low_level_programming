@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - delete at index
+ * delete_dnodeint_at_index - delete at index
  * @head: head of node
  * @index: index to delete
  *
@@ -15,7 +15,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (!head || !*head)
 		return (-1);
 	temp = *head;
-	if (!index)
+	if (index == 0)
 	{
 		*head = temp->next;
 		if (*head)
@@ -23,11 +23,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(temp);
 		return (1);
 	}
-	for (i = 0; temp != NULL && i < index; i++)
+	for (i = 0; i < index; i++)
+	{
+		if (!temp)
+			return (-1);
 		temp = temp->next;
-
-	if (temp == NULL || temp->next == NULL)
-		return (-1);
+	}
 	temp->prev->next = temp->next;
 	if (temp->next)
 		temp->next->prev = temp->prev;
