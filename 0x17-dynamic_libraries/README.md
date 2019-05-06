@@ -2,7 +2,7 @@
 
 ----
 ## what are dynamic libraries?
-see [Wikipedia](https://en.wikipedia.org/wiki/Markdown)
+see [D-libraries](https://medium.com/meatandmachines/shared-dynamic-libraries-in-the-c-programming-language-8c2c03311756)
 
 > Libraries are linked in the final step of C program compilation (where a C program is converted to a form the machine can execute). There are two ways libraries can be linked: statically and dynamically, turning them into either a static library, or a dynamic (shared) library respectively.
 
