@@ -31,4 +31,3 @@ gcc -g -wall -o prog prog.c liball.so
 ```
 
 ----
-)
