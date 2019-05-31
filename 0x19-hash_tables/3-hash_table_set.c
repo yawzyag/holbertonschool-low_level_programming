@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *holi, *node;
 	unsigned long int hash;
 
-	if (!ht)
+	if (!ht || !key || !value)
 		return (0);
 
 	hash = key_index((unsigned char *)key, ht->size);
