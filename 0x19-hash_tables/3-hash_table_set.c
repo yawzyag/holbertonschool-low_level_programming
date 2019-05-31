@@ -1,73 +1,28 @@
 #include "hash_tables.h"
 
 /**
- * _strcmp - show a table whit 9 multiplication
- * @s1: string1
- * @s2: string2
- *
- * Return: number acci code
- */
-int _strcmp(char *s1, char *s2)
-{
-	int i;
-
-	for (i = 0; (*s1 && *s2) && *s1 == *s2; i++)
-	{
-		s1++;
-		s2++;
-	}
-
-	if (*s1 == *s2)
-		return (0);
-	else
-		return (*s1 - *s2);
-}
-
-
-/**
- * add_hash_table - fills memory whit a constant byte
- * @ht: pointer to enter
- * @holi: constant byte for use
+ * creat_node - fills memory whit a constant byte
+ * @key: pointer to enter
+ * @val: constant byte for use
  *
  * Return: pointer to memory
  */
-void add_hash_table(hash_table_t *ht, hash_node_t *holi)
+hash_node_t *creat_node(const char *key, const char *val)
 {
-	unsigned long int hash;
-	hash_node_t *tmp;
+	hash_node_t *new_node;
 
-	hash = (hash_djb2((unsigned char *)holi->key)) % (ht->size);
-	tmp = ht->array[hash];
-
-	if (ht->array[hash])
-	{
-		while (tmp)
-		{
-			if (_strcmp(tmp->key, holi->key) == 0)
-				break;
-			tmp = tmp->next;
-		}
-		if (!tmp)
-		{
-			holi->next = ht->array[hash];
-			ht->array[hash] = holi;
-		}
-		else
-		{
-			free(tmp->value);
-			tmp->value = strdup(holi->value);
-			free(holi->value);
-			free(holi->key);
-			free(holi);
-		}
-	}
-	else
-	{
-		holi->next = NULL;
-		ht->array[hash] = holi;
-	}
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return (0);
+	new_node->key = strdup(key);
+	if (!new_node->key)
+		return (0);
+	new_node->value = strdup(val);
+	if (!new_node->value)
+		return (0);
+	new_node->next = NULL;
+	return (new_node);
 }
-
 
 /**
  * hash_table_set - fills memory whit a constant byte
@@ -79,18 +34,39 @@ void add_hash_table(hash_table_t *ht, hash_node_t *holi)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *holi;
+	hash_node_t *holi, *node;
+	unsigned long int hash;
 
 	if (!ht)
 		return (0);
 
-	holi = malloc(sizeof(hash_node_t));
-	if (!holi)
-		return (0);
-	holi->key = strdup(key);
-	holi->value = strdup(value);
+	hash = key_index((unsigned char *)key, ht->size);
+	if (!ht->array[hash])
+	{
+		node = creat_node(key, value);
+		if (!node)
+			return (0);
+		ht->array[hash] = node;
+		return (1);
+	}
 
-	add_hash_table(ht, holi);
+	for (holi = ht->array[hash]; holi;
+		 holi = holi->next)
+	{
+		if (strcmp(holi->key, key) == 0)
+		{
+			free(holi->value);
+			holi->value = strdup(value);
+			if (!holi->value)
+				return (0);
+			return (1);
+		}
+	}
+	node = creat_node(key, value);
+	if (!node)
+		return (0);
+	node->next = ht->array[hash];
+	ht->array[hash] = node;
 
 	return (0);
 }
