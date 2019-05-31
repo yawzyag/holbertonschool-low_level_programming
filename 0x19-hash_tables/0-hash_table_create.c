@@ -27,6 +27,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	}
 	for (i = 0; i < size; i++)
 		holi->array[i] = NULL;
-	
+
 	return (holi);
 }
