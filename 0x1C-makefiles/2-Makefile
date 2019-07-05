@@ -1,0 +1,9 @@
+# This is a very simple makefile
+
+CC=gcc
+SRC=$(wildcard *.c)
+OBJ=$(wildcard *.o)
+NAME=holberton
+
+all: main.c holberton.c
+	$(CC) $(SRC) -o $(NAME)
