@@ -2,42 +2,9 @@
 """
 5-islita
 """
-R = 5
-C = 6
 
 
-def numofneighbour(mat, i, j):
-
-    count = 0
-
-    if (i > 0 and mat[i - 1][j]):
-        count += 1
-
-    if (j > 0 and mat[i][j - 1]):
-        count += 1
-
-    if (i < R-1 and mat[i + 1][j]):
-        count += 1
-
-    if (j < C-1 and mat[i][j + 1]):
-        count += 1
-
-    return count
-
-
-def findperimeter(mat):
-
-    perimeter = 0
-
-    for i in range(0, R):
-        for j in range(0, C):
-            if (mat[i][j]):
-                perimeter += (4 - numofneighbour(mat, i, j))
-
-    return perimeter
-
-
-def numofneighbour(mat, i, j):
+def numofneighbour(mat, i, j, a1, a2):
 
     count = 0
 
@@ -46,10 +13,10 @@ def numofneighbour(mat, i, j):
     if (j > 0 and mat[i][j - 1]):
         count += 1
 
-    if (i < R-1 and mat[i + 1][j]):
+    if (i < a1-1 and mat[i + 1][j]):
         count += 1
 
-    if (j < C-1 and mat[i][j + 1]):
+    if (j < a2-1 and mat[i][j + 1]):
         count += 1
 
     return count
@@ -58,10 +25,12 @@ def numofneighbour(mat, i, j):
 def island_perimeter(grid):
     """ holi """
 
+    array1 = len(grid)
+    array2 = len(grid[0])
     perimeter = 0
-    for i in range(0, R):
-        for j in range(0, C):
+    for i in range(0, array1):
+        for j in range(0, array2):
             if (grid[i][j]):
-                perimeter += (4 - numofneighbour(grid, i, j))
+                perimeter += (4 - numofneighbour(grid, i, j, array1, array2))
 
     return perimeter
