@@ -7,7 +7,7 @@ NAME=holberton
 .PHONY: all clean oclean fclean re
 
 all: m.h $(SRC:.c=.o)
-	$(CC) $(CFLAGS) $(SRC:.c=.o) -o $(NAME)
+	$(CC) -Wall -Werror -Wextra -pedantic $(SRC:.c=.o) -o $(NAME)
 
 clean:
 	rm -f *~ $(NAME)
