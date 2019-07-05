@@ -3,7 +3,6 @@
 5-islita
 """
 
-
 def island_perimeter(grid):
     """ holi """
 
@@ -11,6 +10,7 @@ def island_perimeter(grid):
     a2 = len(grid[0])
     count = 0
     perimeter = 0
+    bandera = 0
     for i in range(a1):
         for j in range(a2):
             if (grid[i][j]) == 1:
@@ -25,8 +25,11 @@ def island_perimeter(grid):
 
                 if (j < a2-1 and grid[i][j + 1]):
                     count += 1
-                if count != perimeter:
+                if count != perimeter and count != 0:
                     perimeter = count
                     perimeter += 4
+                bandera += 1
+        if bandera == 1:
+            perimeter = 4
 
     return perimeter
