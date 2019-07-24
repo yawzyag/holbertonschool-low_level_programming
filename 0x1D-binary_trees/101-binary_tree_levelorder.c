@@ -6,18 +6,18 @@
  */
 int height(const binary_tree_t *tree)
 {
-	if (tree == NULL)
-		return 0;
-	else
-	{
-		int l_h = height(tree->left);
-		int r_h = height(tree->right);
+	int l_h;
+	int r_h;
 
-		if (l_h > r_h)
-			return (l_h + 1);
-		else
-			return (r_h + 1);
-	}
+	if (!tree)
+		return (0);
+
+	l_h = height(tree->left);
+	r_h = height(tree->right);
+	if (l_h > r_h)
+		return (l_h + 1);
+	else
+		return (r_h + 1);
 }
 
 /**
@@ -49,6 +49,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
 	int h = height(tree);
 	int i;
+
 	for (i = 1; i <= h; i++)
 		print_lvl(tree, i, func);
 }
