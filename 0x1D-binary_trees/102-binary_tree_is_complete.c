@@ -40,7 +40,7 @@ int complete_recursive(const binary_tree_t *tree, unsigned int i,
  * Return: 0 or 1
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
-{		
+{
 	unsigned int nodes = size(tree);
 	unsigned int i = 0;
 
