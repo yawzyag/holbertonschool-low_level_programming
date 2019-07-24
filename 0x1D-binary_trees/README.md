@@ -181,5 +181,6 @@ What you should learn from this project:
 
 ---
 
-## Author
+## Authors
 * **Alejo-Rey** - [Alejo-Rey](https://github.com/Alejo-Rey)
+* **Yesid-Gon** - [Yesid-Gon](https://github.com/yawzyag)

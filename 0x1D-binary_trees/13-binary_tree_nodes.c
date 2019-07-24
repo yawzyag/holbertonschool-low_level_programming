@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_nodes -
- *
- * Return: 
+ * binary_tree_nodes - nodes of binary tree
+ * @tree: binary tree
+ * Return: 1 or 0
  */
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {

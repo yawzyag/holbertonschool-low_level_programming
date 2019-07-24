@@ -8,7 +8,7 @@
  */
 int max(int a, int b)
 {
-	return (a >= b) ? a : b;
+	return ((a >= b) ? a : b);
 }
 /**
  * height - function to mesure the tree
@@ -18,17 +18,15 @@ int max(int a, int b)
 size_t height(const binary_tree_t *node)
 {
 	if (node == NULL)
-		return 0;
+		return (0);
 
-	/* If tree is not empty then height = 1 + max of left 
-	   height and right heights */
-	return 1 + max(height(node->left), height(node->right));
+	return (1 + max(height(node->left), height(node->right)));
 }
 
 /**
- * binary_tree_balance -
- *
- * Return: 
+ * binary_tree_balance - check if is balance
+ * @tree: tree to check
+ * Return: 0 or 1
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {

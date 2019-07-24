@@ -1,5 +1,10 @@
 #include "binary_trees.h"
 
+/**
+ * size - check recursivley
+ * @tree: tree to check
+ * Return: check
+ */
 unsigned int size(const binary_tree_t *tree)
 {
 	if (!tree)
@@ -9,6 +14,13 @@ unsigned int size(const binary_tree_t *tree)
 				size(tree->right) + 1);
 }
 
+/**
+ * complete_recursive - check recursivley
+ * @tree: tree to check
+ * @i: index
+ * @number_nodes: number of nodes
+ * Return: check
+ */
 int complete_recursive(const binary_tree_t *tree, unsigned int i,
 		       unsigned int number_nodes)
 {
@@ -23,9 +35,9 @@ int complete_recursive(const binary_tree_t *tree, unsigned int i,
 }
 
 /**
- * binary_tree_is_complete -
- *
- * Return: 
+ * binary_tree_is_complete - check if is complete
+ * @tree: tree to check
+ * Return: 0 or 1
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {		
