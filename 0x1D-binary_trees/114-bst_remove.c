@@ -1,6 +1,21 @@
 #include "binary_trees.h"
 
 /**
+ * min_root - remove node
+ * @root: root of the tree
+ * Return: tree root
+ */
+bst_t *min_root(bst_t *root)
+{
+	if (root == NULL)
+		return (NULL);
+	if (root->left != NULL)
+		return (min_root(root->left));
+
+	return (root);
+}
+
+/**
  * bst_remove - remove node
  * @root: root of the tree
  * @value: value to remove
@@ -8,35 +23,41 @@
  */
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *tmp, *succ;
+	bst_t *temp = NULL;
 
 	if (!root)
-		return (root);
-
+		return (NULL);
 	if (value < root->n)
 		root->left = bst_remove(root->left, value);
 	else if (value > root->n)
 		root->right = bst_remove(root->right, value);
 	else
 	{
-		if (root->left != NULL && root->right != NULL)
+		if (!root->left && !root->right)
 		{
-			succ = root->right;
-			while (succ->left)
-				succ = succ->left;
-			root->n = succ->n;
-			root->right = bst_remove(root->right, succ->n);
+			free(root);
+			root = (NULL);
+		}
+		else if (!root->left)
+		{
+			temp = root;
+			root = root->right;
+			if (temp)
+				free(temp);
+		}
+		else if (!root->right)
+		{
+			temp = root;
+			root = root->left;
+			if (temp)
+				free(temp);
 		}
 		else
 		{
-			tmp = root;
-			if (root->left != NULL)
-				root = root->left;
-			else if (root->right != NULL)
-				root = root->right;
-			else
-				root = NULL;
+			temp = min_root(root->right);
+			root->n = temp->n;
+			root->right = bst_remove(root->right, temp->n);
 		}
 	}
-	return root;
+	return (root);
 }
