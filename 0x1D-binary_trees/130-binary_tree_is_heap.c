@@ -71,6 +71,8 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 	size_t node_count = binary_tree_size(tree);
 	size_t index = 0;
 
+	if (!tree)
+		return (0);
 	if (complete_recursive(tree, index, node_count) && recursive_heap(tree))
 		return (1);
 	return (0);
