@@ -32,20 +32,21 @@ int jump_search(int *array, size_t size, int value)
 	{
 		right = mini(size - 1, left + jump);
 		printf("Value checked array[%lu] = [%d]\n", left, array[left]);
+		if (left + jump > size - 1)
+		{
+			left = right;
+			right += jump;
+			break;
+		}
 		if (array[left] <= value && array[right] >= value)
 		{
 			break;
 		}
-
 		left += jump;
 	}
-	right = mini(size - 1, right);
-	if (left > right)
-		printf("Value found between indexes [%lu] and [%lu]\n", right, left);
-	else
 		printf("Value found between indexes [%lu] and [%lu]\n", left, right);
 	left = mini(left, right);
-	for (i = left; i <= right; ++i)
+	for (i = left; i <= size - 1; ++i)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
 		if (array[i] == value)
