@@ -30,38 +30,32 @@ void print_array(int *array, size_t init, size_t size)
 }
 
 /**
- * binarySearch - function to search in all items
+ * binarysearch - function to search in all items
  * @array: array to traverse
- * @start: size of array
- * @end: end of array
- * @key: value to search
+ * @first: size of array
+ * @last: last item
+ * @value: value to search
  * Return: index of item if exist, otherwise -1
  */
-int binarySearch(int *array, int start, int end, int key)
+int binarysearch(int *array, size_t first, size_t last, int value)
 {
-	int mid;
+	size_t m = 0;
 
-	if (start <= end)
+	if (!array)
+		return (-1);
+	while (first <= last)
 	{
-		mid = (start + (end - start) / 2);
+		m = first + (last - first) / 2;
 
-		if (array[mid] == key)
-		{
-			if (mid == key)
-			{
-				printf("Searching in array: ");
-				print_array(array, start, end);
-				printf("\n");
-			}
-			return (mid);
-		}
 		printf("Searching in array: ");
-		print_array(array, start - 1, end - 1);
+		print_array(array, first, last);
 		printf("\n");
-		if (array[mid] > key)
-			return (binarySearch(array, start, mid - 1, key));
-
-		return (binarySearch(array, mid + 1, end, key));
+		if (array[m] == value)
+			return (m);
+		if (array[m] < value)
+			first = m + 1;
+		else
+			last = m - 1;
 	}
 	return (-1);
 }
@@ -77,6 +71,8 @@ int exponential_search(int *array, size_t size, int value)
 {
 	size_t i, start = 0;
 
+	if (!array)
+		return (-1);
 	if ((size - start) <= 0)
 		return (-1);
 	i = 1;
@@ -91,6 +87,8 @@ int exponential_search(int *array, size_t size, int value)
 			break;
 	}
 	printf("Value found between indexes [%lu] and [%lu]\n",
-		i / 2, mini(i, size - 1));
-	return (binarySearch(array, i / 2, mini(i, size), value));
+	       i / 2, mini(i, size - 1));
+
+
+	return (binarysearch(array, i / 2, mini(i, size - 1), value));
 }
